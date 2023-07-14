@@ -27,7 +27,7 @@ export class LoginComponent {
       password: this.password,
     };
  
-        this.http.post("http://localhost:8081/api/v1/employee/login", bodyData).subscribe(  (resultData: any) => {
+        this.http.post("http://localhost:8080/api/v1/employee/login", bodyData).subscribe(  (resultData: any) => {
         console.log(resultData);
  
         if (resultData.message == "Email not exits")
@@ -48,6 +48,9 @@ export class LoginComponent {
         }
 
       });
+    }
+    MovetoRegister() {
+      this.router.navigateByUrl('/register');;
     }
 
 }
